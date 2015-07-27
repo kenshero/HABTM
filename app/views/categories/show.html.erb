@@ -1,0 +1,22 @@
+<%= link_to "Add+",new_product_path %>
+
+<%= link_to "Category+",categories_path %>
+
+<ul>
+  <% Category.all.each do |category| %>
+    <li><%= link_to category.name_category , category_path(category.id) %></li>
+  <% end %>
+</ul>
+
+<table border="1px">
+  <tr>
+    <td>Name</td>
+    <td>Category</td>
+  </tr>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name_product  %></td>
+      <td><%= product.name_category %></td>
+    </tr>
+  <% end %>
+</table>

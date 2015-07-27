@@ -1,0 +1,14 @@
+<%= form_for @product do |f| %>
+
+  <%= f.label :name_product %> <br>
+  <%= f.text_field :name_product %>
+
+  <br>
+    <% Category.all.each do |category| %>
+      <%= check_box_tag "product[category_ids][]" , category.id %>
+      <%= category.name_category %>
+       <br>
+    <% end %>
+  <%= f.submit %>
+
+<% end %>
