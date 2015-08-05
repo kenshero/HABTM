@@ -11,4 +11,11 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+  test "should create category" do
+    post :create ,category:{
+      name_category: "SSSS"
+    }
+    assert_redirected_to  categories_path
+  end
+
 end

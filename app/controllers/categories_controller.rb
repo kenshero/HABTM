@@ -8,7 +8,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    # @category = Category.find(params[:id])
     @products = Product.joins(:categories).select("*").where(categories: {id: params[:id]})
   end
 
